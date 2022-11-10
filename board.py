@@ -26,7 +26,7 @@ class Board:
         i = 0
         while i < self.no_of_snakes:
             sn_start, sn_end = reversed(sorted(random.sample(range(100), 2)))
-            if not self.board.get(sn_start):
+            if not self.board.get(sn_start) and not sn_start == self.final_pos-1:
                 self.board.update({sn_start: Snake(sn_start, sn_end)})
                 i += 1
         for i in range(100):
